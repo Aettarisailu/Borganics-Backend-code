@@ -1,10 +1,12 @@
 require('dotenv').config();
 const express = require('express');
+const PORT = process.env.PORT || 4000;
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const { orderRoutes } = require('./routes/orders.routes.js');
 const { adminRoutes } = require('./routes/admin.routes.js');
+
 
 const app = express();
 
@@ -36,7 +38,7 @@ app.use('/api', orderRoutes); // Use order routes
 app.use("/api", adminRoutes);
 
 // Start the server
-const PORT = process.env.PORT || 5001;
+// const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
