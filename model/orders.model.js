@@ -21,23 +21,32 @@ const orderSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  paymentMethod:{
-    type:String
+  paymentMethod: {
+    type: String
   },
-  email:{
-    type : String
+  email: {
+    type: String
   },
-  addr:{
-    type:String
+  addr: {
+    type: String
   },
-  pin:{
-    type:String
+  landmark: {
+    type: String
   },
-  phone:{
-    type:String
+  city: {
+    type: String
   },
-  username:{
-    type:String
+  state: {
+    type: String
+  },
+  pin: {
+    type: String
+  },
+  phone: {
+    type: String
+  },
+  username: {
+    type: String
   }
 });
 
