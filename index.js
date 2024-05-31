@@ -57,7 +57,7 @@ const bodyParser = require('body-parser');
 const { orderRoutes } = require('./routes/orders.routes.js');
 const { adminRoutes } = require('./routes/admin.routes.js');
 const emailRoutes = require('./routes/emailRoutes');
-const { userRoutes } = require('./routes/users.routes.js'); //userlogin
+// const { userRoutes } = require('./routes/users.routes.js'); //userlogin
 
 const app = express();
 
@@ -83,7 +83,7 @@ app.use(bodyParser.json());
 app.use('/api', orderRoutes); // Use order routes
 app.use("/api", adminRoutes);
 app.use("/send", emailRoutes.EmailRoutes); // Use email routes
-app.use('/api', userRoutes);  //userlogin
+// app.use('/api', userRoutes);  //userlogin
 
 // Start the server
 app.listen(PORT, () => {
