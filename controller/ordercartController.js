@@ -34,6 +34,19 @@ const placeOrder = async (req, res) => {
     }
 };
 
+// Controller to handle fetching orders
+const getOrders = async (req, res) => {
+    try {
+        const orders = await Ordercart.find();
+        res.status(200).json(orders);
+    } catch (error) {
+        console.error('Error fetching orders:', error);
+        res.status(500).json({ message: 'Error fetching orders', error });
+    }
+};
+
+
 module.exports = {
-    placeOrder
+    placeOrder,
+    getOrders // Export the new getOrders function
 };
