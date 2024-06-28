@@ -5,6 +5,8 @@ const placeOrder = async (req, res) => {
     try {
         const { fullName, email, phone, address, landmark, city, state, pin, cart, status } = req.body;
         
+        console.log('Order request received with data:', req.body);
+
         // Create a new order
         const newOrder = new Ordercart({
             fullName,

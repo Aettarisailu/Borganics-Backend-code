@@ -13,6 +13,6 @@ const ordercartSchema = new mongoose.Schema({
     status: { type: String, required: true }
 });
 
-const Ordercart = mongoose.model('Ordercart', ordercartSchema);
+const Ordercart = mongoose.model('ordercarts', ordercartSchema);
 
 module.exports = Ordercart;
