@@ -6,9 +6,8 @@ const bodyParser = require('body-parser');
 const { orderRoutes } = require('./routes/orders.routes.js');
 const ordercartRoutes = require('./routes/ordercartRoutes'); // Import ordercartRoutes
 const { adminRoutes } = require('./routes/admin.routes.js');
-// const { checkoutRoutes } = require('./routes/checkout.routes.js');
 const emailRoutes = require('./routes/emailRoutes');
-// const { userRoutes } = require('./routes/users.routes.js'); //userlogin
+const authRoutes = require('./routes/auth.routes');
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -33,10 +32,9 @@ app.use(bodyParser.json());
 // Routes
 app.use('/api', ordercartRoutes); // Use ordercart routes
 app.use('/api', orderRoutes); // Use order routes
-app.use("/api", adminRoutes);
+app.use("/api", adminRoutes); // adminRoutes routes
 app.use("/send", emailRoutes.EmailRoutes); // Use email routes
-// app.use('/api', checkoutRoutes); // Use checkout routes
-// app.use('/api', userRoutes);  //userlogin
+app.use('/api/auth', authRoutes); // Use new a/c and login and forgot routes
 
 // Start the server
 app.listen(PORT, () => {
